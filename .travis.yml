@@ -1,16 +1,13 @@
 language: python
 python:
-  - "3.8"
-
+- '3.8'
 before_script: pip install -r requirements.txt
-
 script:
-  - python manage.py test
-# The Faraday library must be installed before the build can be deployed to Heroku.
+- python manage.py test
 before_deploy:
-  - rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
-
+- rvm $(travis_internal_ruby) --fuzzy do ruby -S gem install faraday -v 1.8.0
 deploy:
   provider: heroku
-  api_key: "paste-your-heroku-api-key" # you can go into Travis CI documentation to hide this
-  app: my-test-recipe-app-101 # name of your heroku app
+  api_key:
+    secure: P5P+T2RoIuSR7Jzv4KV8fx87dOLNsVZMXikpp2SDDKQp4cgFoUR1js3l7uVraqE9m1rMyrdHTUevgc+Da6KUy2RHLpeX74s51I72j0vxWQdN+V8BwXDgfqn/cQjmmdwWHLg75RXB32tvDI+OY0xiuOlRsrmbOcerm6iIH4xWHvYPAsHllZD+ksmb+7mm3S7FctejO5Vi/02ROuwJl5i6knJaILYB1LizV3e3/URAKt15yysy4IfgL2czIuLMRFzRM8BNsG5mBzshIKZpBAqGHWMXCmEOaCXqHimhF8jEMJWi1Gk0qdiLLsASxIkC7x4OX3vFONIZk9zVpZ8e0EkKxrZSxlXX7HgVuHwNWhQrjLyk6jSsPexfToGpni9uJTrpS3xOTE/p1a52nf9guhoPfc+KXpL3di2vEurmMbIn5LXS5AleqoB38HA6JKBvRtpEqyDHUjX9+dqn6CKzoTaCsYhrKszMZYbbX1oX8wdyb6JBRCxqqiK9FWKPd1DmKqqfSYC/gdGQ8REQuIoqb6YKIhTxmjghaddkG20iyVW8XfutZPhSmYUybSltAWrXdEmuEoE5KD68+nmkZ++WZfE05To59FA2klx4nzWM0IVpRjNn2B6LrKZjtN1YUfYztuUPYB5HT/S8Eyy5XSDQ6tmsMAXjleyHq4iAsPk/Xk9fwqE=
+  app: my-test-recipe-app-101
