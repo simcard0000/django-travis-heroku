@@ -1,0 +1,7 @@
+Django==3.2
+djangorestframework==3.13.1
+gunicorn
+dj-database-url
+psycopg2-binary
+wheel
+whitenoise==6.0.0
