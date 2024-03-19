@@ -1,4 +1,4 @@
-Django==3.2.24
+Django==3.2.25
 djangorestframework==3.13.1
 gunicorn
 dj-database-url
